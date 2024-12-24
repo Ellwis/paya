@@ -1,0 +1,139 @@
+<!--<?xml version="1.1" encoding="UTF-8" standalone="no"?>-->
+<!--<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">-->
+<!--    <changeSet author="user1220 (generated)" id="1730545366908-1">-->
+<!--        <createTable tableName="tbl_attachment">-->
+<!--            <column computed="false" name="attachment_id" type="char(36)">-->
+<!--                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TBL_ATTACHMENT"/>-->
+<!--            </column>-->
+<!--            <column computed="false" name="attachment_file" type="varchar(MAX)"/>-->
+<!--            <column computed="false" name="attachment_payment_regime_id" type="char(36)"/>-->
+<!--            <column computed="false" name="attachment_pleaser_service_priority_id" type="char(36)"/>-->
+<!--            <column computed="false" name="attachment_pleaser_service_id" type="char(36)"/>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
+<!--    <changeSet author="user1220 (generated)" id="1730545366908-2">-->
+<!--        <createTable tableName="tbl_payment_regime">-->
+<!--            <column computed="false" name="payment_regime_id" type="char(36)">-->
+<!--                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TBL_PAYMENT_REGIME"/>-->
+<!--            </column>-->
+<!--            <column computed="false" name="payment_regime_pleaser_priority_payment_method_id" type="char(36)"/>-->
+<!--            <column computed="false" name="payment_regime_content" type="nvarchar(MAX)"/>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
+<!--    <changeSet author="user1220 (generated)" id="1730545366908-3">-->
+<!--        <createTable tableName="tbl_personnel">-->
+<!--            <column computed="false" name="personnel_id" type="char(36)">-->
+<!--                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TBL_PERSONNEL"/>-->
+<!--            </column>-->
+<!--            <column computed="false" name="personnel_first_name" type="varchar(1)"/>-->
+<!--            <column computed="false" name="personnel_last_name" type="varchar(1)"/>-->
+<!--            <column computed="false" name="personnel_enterprise_id" type="varchar(1)"/>-->
+<!--            <column computed="false" name="personnel_national_code" type="varchar(1)"/>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
+<!--    <changeSet author="user1220 (generated)" id="1730545366908-4">-->
+<!--        <createTable tableName="tbl_pleaser_priority_payment_method">-->
+<!--            <column computed="false" name="pleaser_priority_payment_method_id" type="char(36)">-->
+<!--                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TBL_PLEASER_PRIORITY_PAYMENT_METHOD"/>-->
+<!--            </column>-->
+<!--            <column computed="false" name="pleaser_priority_payment_method_type" type="tinyint"/>-->
+<!--            <column computed="false" name="pleaser_priority_payment_method_prepayment" type="decimal(18, 0)"/>-->
+<!--            <column computed="false" name="pleaser_priority_payment_method_count_of_month_installments" type="smallint"/>-->
+<!--            <column computed="false" name="pleaser_priority_payment_method_pleaser_service_priority_id" type="char(36)"/>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
+<!--    <changeSet author="user1220 (generated)" id="1730545366908-5">-->
+<!--        <createTable tableName="tbl_pleaser_service">-->
+<!--            <column computed="false" name="pleaser_service_id" type="char(36)">-->
+<!--                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TBL_PLEASER_SERVICE"/>-->
+<!--            </column>-->
+<!--            <column computed="false" name="pleaser_service_service_number" type="nvarchar(15)"/>-->
+<!--            <column computed="false" name="pleaser_service_created_at" type="datetime"/>-->
+<!--            <column computed="false" name="pleaser_service_type" type="tinyint"/>-->
+<!--            <column computed="false" name="pleaser_service_title" type="nvarchar(50)"/>-->
+<!--            <column computed="false" name="pleaser_service_count" type="int"/>-->
+<!--            <column computed="false" name="pleaser_service_personnel_id" type="char(36)">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
+<!--    <changeSet author="user1220 (generated)" id="1730545366908-6">-->
+<!--        <createTable tableName="tbl_pleaser_service_confirmation">-->
+<!--            <column computed="false" name="pleaser_service_confirmation_id" type="char(36)">-->
+<!--                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TBL_PLEASER_SERVICE_CONFIRMATION"/>-->
+<!--            </column>-->
+<!--            <column computed="false" name="pleaser_service_confirmation_reviewer_personnel_id" type="char(36)"/>-->
+<!--            <column computed="false" name="pleaser_service_confirmation_confirm" type="bit"/>-->
+<!--            <column computed="false" name="pleaser_service_confirmation_confirmation_level" type="tinyint"/>-->
+<!--            <column computed="false" name="pleaser_service_confirmation_description" type="nvarchar(MAX)"/>-->
+<!--            <column computed="false" name="pleaser_service_confirmation_pleaser_service_id" type="char(32)"/>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
+<!--    <changeSet author="user1220 (generated)" id="1730545366908-7">-->
+<!--        <createTable tableName="tbl_pleaser_service_field">-->
+<!--            <column computed="false" name="pleaser_service_field_id" type="char(36)">-->
+<!--                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TBL_PLEASER_SERVICE_FIELD"/>-->
+<!--            </column>-->
+<!--            <column computed="false" name="pleaser_service_field_pleaser_service_id" type="char(36)"/>-->
+<!--            <column computed="false" name="pleaser_service_field_colour" type="nvarchar(20)"/>-->
+<!--            <column computed="false" name="pleaser_service_field_meterage" type="float(53)"/>-->
+<!--            <column computed="false" name="pleaser_service_field_size" type="nvarchar(20)"/>-->
+<!--            <column computed="false" name="pleaser_service_field_production_year" type="smallint"/>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
+<!--    <changeSet author="user1220 (generated)" id="1730545366908-8">-->
+<!--        <createTable tableName="tbl_pleaser_service_priority">-->
+<!--            <column computed="false" name="pleaser_service_priority_id" type="char(36)">-->
+<!--                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TBL_PLEASER_SERVICE_PRIORITY"/>-->
+<!--            </column>-->
+<!--            <column computed="false" name="pleaser_service_priority_number" type="tinyint"/>-->
+<!--            <column computed="false" name="pleaser_service_priority_pleaser_service_id" type="char(36)"/>-->
+<!--            <column computed="false" name="pleaser_service_priority_weight" type="int"/>-->
+<!--            <column computed="false" name="pleaser_service_priority_amount" type="decimal(18, 0)"/>-->
+<!--            <column computed="false" name="pleaser_service_priority_allowed_count" type="int"/>-->
+<!--            <column computed="false" name="pleaser_service_priority_measurement_unit" type="tinyint"/>-->
+<!--            <column computed="false" name="pleaser_service_priority_start_date" type="date"/>-->
+<!--            <column computed="false" name="pleaser_service_priority_end_date" type="date"/>-->
+<!--            <column computed="false" name="pleaser_service_priority_description" type="nvarchar(MAX)"/>-->
+<!--            <column computed="false" name="pleaser_service_priority_cancel_option" type="bit"/>-->
+<!--            <column computed="false" name="pleaser_service_priority_maximum_cancellation_date" type="datetime"/>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
+<!--    <changeSet author="user1220 (generated)" id="1730545366908-9">-->
+<!--        <createTable tableName="tbl_pleaser_service_request">-->
+<!--            <column computed="false" name="pleaser_service_request_id" type="char(38)">-->
+<!--                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TBL_PLEASER_SERVICE_REQUEST"/>-->
+<!--            </column>-->
+<!--            <column computed="false" name="pleaser_service_request_applicant_personnel_id" type="char(36)"/>-->
+<!--            <column computed="false" name="pleaser_service_request_pleaser_service_priority_id" type="char(36)"/>-->
+<!--            <column computed="false" name="pleaser_service_request_payment_regime_id" type="char(36)"/>-->
+<!--            <column computed="false" name="pleaser_service_request_pleaser_priority_payment_method_id" type="char(36)"/>-->
+<!--            <column computed="false" name="pleaser_service_request_status" type="tinyint"/>-->
+<!--            <column computed="false" name="pleaser_service_request_reviewer_personnel_id" type="char(36)"/>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
+<!--    <changeSet author="user1220 (generated)" id="1730545366908-10">-->
+<!--        <createTable tableName="tbl_pleaser_service_request_confirmation">-->
+<!--            <column computed="false" name="pleaser_service_request_confirmation_id" type="char(36)">-->
+<!--                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TBL_PLEASER_SERVICE_REQUEST_CONFIRMATION"/>-->
+<!--            </column>-->
+<!--            <column computed="false" name="pleaser_service_request_confirmation_pleaser_service_request_id" type="char(36)"/>-->
+<!--            <column computed="false" name="pleaser_service_request_confirmation_reviewer_personnel_id" type="char(36)"/>-->
+<!--            <column computed="false" name="pleaser_service_request_confirmation_description" type="nvarchar(MAX)"/>-->
+<!--            <column computed="false" name="pleaser_service_request_confirmation_status" type="tinyint"/>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
+<!--    <changeSet author="user1220 (generated)" id="1730545366908-11">-->
+<!--        <createTable tableName="tbl-priority-condition">-->
+<!--            <column computed="false" name="priority_condition_id" type="char(36)">-->
+<!--                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TBL-PRIORITY-CONDITION"/>-->
+<!--            </column>-->
+<!--            <column computed="false" name="priority_condition_pleaser_service_priority_id" type="char(36)"/>-->
+<!--            <column computed="false" name="priority_condition_title" type="nvarchar(50)"/>-->
+<!--            <column computed="false" name="priority_condition_field_title" type="nvarchar(50)"/>-->
+<!--            <column computed="false" name="priority_condition_status" type="bit"/>-->
+<!--            <column computed="false" name="priority_condition_content" type="nvarchar(MAX)"/>-->
+<!--            <column computed="false" name="priority_condition_has_condition" type="bit"/>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
+<!--</databaseChangeLog>-->
